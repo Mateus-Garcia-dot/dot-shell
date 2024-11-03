@@ -37,7 +37,7 @@ autoload -Uz compinit
 PLUGINS_DIR=$HOME/.config/shell/plugins
 source $PLUGINS_DIR/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source $PLUGINS_DIR/powerlevel10k/powerlevel10k.zsh-theme
-
+source $PLUGINS_DIR/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

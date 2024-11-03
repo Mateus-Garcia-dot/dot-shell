@@ -5,3 +5,6 @@
 	path = plugins/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
 	shallow = true
+[submodule "plugins/zsh-vi-mode"]
+	path = plugins/zsh-vi-mode
+	url = https://github.com/jeffreytse/zsh-vi-mode.git
