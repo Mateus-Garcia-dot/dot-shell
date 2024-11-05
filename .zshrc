@@ -18,8 +18,6 @@ fpath=(${ASDF_DIR}/completions $fpath)
 
 export PATH=$HOME/.cargo/bin:$PATH
 
-
-
 # End of lines configured by zsh-newuser-install
 
 # The following lines were added by compinstall
