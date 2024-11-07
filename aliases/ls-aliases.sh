@@ -1,2 +1,3 @@
 alias ls="ls --color=auto"
-alias l\.="ls --color=auto -a"
+alias ll="ls -l --color=auto"
+alias l\.="ls --color=auto -d .* "
