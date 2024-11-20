@@ -8,3 +8,6 @@
 [submodule "plugins/zsh-vi-mode"]
 	path = plugins/zsh-vi-mode
 	url = https://github.com/jeffreytse/zsh-vi-mode.git
+[submodule "plugins/zsh-defer"]
+	path = plugins/zsh-defer
+	url = https://github.com/romkatv/zsh-defer

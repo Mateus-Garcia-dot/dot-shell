@@ -14,9 +14,7 @@ _docker_container_ids() {
 
 	local -a options
 	for container in "${containers[@]}"; do
-		local id="${container%%:*}"
-		local name="${container#*:}"
-		options+=("${id}:${name}")
+		options+=("${container}")
 	done
 
 	_describe 'container' options
