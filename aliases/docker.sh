@@ -1,3 +1,5 @@
+#!/bin/env bash
+
 autoload bashcompinit && bashcompinit
 
 alias dcr="docker-compose down;docker-compose up"

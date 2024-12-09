@@ -1,3 +1,5 @@
+#!/bin/env bash
+
 alias g='git'
 alias gc='git commit -v'
 alias gcl='git clone'
@@ -11,6 +13,7 @@ alias glg='git log --stat'
 alias gl='git pull'
 alias gpf!='git push --force'
 alias grb='git rebase'
+alias grbo='git rebase origin'
 alias grm='git rm'
 alias gst='git status'
 alias gb='git branch --sort=committerdate'
