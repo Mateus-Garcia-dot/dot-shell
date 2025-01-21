@@ -20,6 +20,8 @@ alias gb='git branch --sort=committerdate'
 alias grt='cd "$(git rev-parse --show-toplevel || echo .)"'
 alias gres='git restore'
 alias gress='git restore --source'
+alias gsh='git stash'
+alias gshp='git stash push --patch'
 
 # alias gco='git checkout'
 function gco() {
