@@ -18,9 +18,6 @@ bindkey -e
 . "$HOME/.asdf/asdf.sh"
 fpath=(${ASDF_DIR}/completions $fpath)
 
-# Add things to path
-export PATH=$HOME/.cargo/bin:$PATH
-
 # Some auto complete configs
 zstyle ':completion:*' completer _complete _ignored
 zstyle :compinstall filename "$HOME/.zshrc"
