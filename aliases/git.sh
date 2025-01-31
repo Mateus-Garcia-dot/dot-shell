@@ -22,6 +22,7 @@ alias gres='git restore'
 alias gress='git restore --source'
 alias gsh='git stash'
 alias gshp='git stash push --patch'
+alias gf='git fetch'
 
 # alias gco='git checkout'
 function gco() {
