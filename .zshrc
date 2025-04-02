@@ -1,8 +1,5 @@
 PLUGINS_DIR=$HOME/.config/shell/plugins
 
-# This plugin is kinda different so it needs to be at the top
-source $PLUGINS_DIR/zsh-defer/zsh-defer.plugin.zsh
-
 # P10K initialization
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -14,9 +11,11 @@ HISTSIZE=1000000
 SAVEHIST=100000
 bindkey -e
 
-# asdf init 
-. "$HOME/.asdf/asdf.sh"
-fpath=(${ASDF_DIR}/completions $fpath)
+#Some path things
+PATH=/opt/homebrew/bin:$PATH
+PATH=/usr/local/bin:$PATH
+PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+PATH="/Users/mateus.garcia/.asdf/shims:$PATH"
 
 # Some auto complete configs
 zstyle ':completion:*' completer _complete _ignored
@@ -44,3 +43,5 @@ export NVM_DIR="$HOME/.nvm"
 . $HOME/.config/shell/startup.sh
 
 load_custom_shell
+
+export GPG_TTY=$(tty)
