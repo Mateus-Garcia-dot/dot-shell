@@ -16,6 +16,7 @@ PATH=/opt/homebrew/bin:$PATH
 PATH=/usr/local/bin:$PATH
 PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 PATH="/Users/mateus.garcia/.asdf/shims:$PATH"
+PATH="/Users/mateus.garcia/.local/bin:$PATH"
 
 # Some auto complete configs
 zstyle ':completion:*' completer _complete _ignored
