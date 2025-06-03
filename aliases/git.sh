@@ -4,6 +4,7 @@ alias g='git'
 alias ga='git add'
 alias gb='git branch --sort=committerdate'
 alias gc='git commit -v'
+alias gcae='git commit --verbose --amend'
 alias gcl='git clone'
 alias gcn!='git commit --verbose --no-edit --amend'
 alias gd='git diff'
@@ -24,6 +25,7 @@ alias gshp='git stash push --patch'
 alias gst='git status'
 alias gsw='git switch'
 alias gwip='git add -A && git commit -m "WIP"'
+
 
 # alias gco='git checkout'
 function gco() {
