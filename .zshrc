@@ -1,10 +1,5 @@
 PLUGINS_DIR=$HOME/.config/shell/plugins
 
-# P10K initialization
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # Hist configs
 HISTFILE=~/.histfile
 HISTSIZE=1000000
@@ -28,12 +23,8 @@ zstyle ':completion:*' menu select
 
 # raw dogging the pugins just to get some more performance
 source $PLUGINS_DIR/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-source $PLUGINS_DIR/powerlevel10k/powerlevel10k.zsh-theme
 source $PLUGINS_DIR/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 source $PLUGINS_DIR/zsh-manydots-magic/manydots-magic
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 #Nvm Things
 export NVM_DIR="$HOME/.nvm"
@@ -46,3 +37,22 @@ export NVM_DIR="$HOME/.nvm"
 load_custom_shell
 
 export GPG_TTY=$(tty)
+
+#prompt
+fpath+=("$(brew --prefix)/share/zsh/site-functions")
+autoload -U promptinit; 
+promptinit
+prompt pure
+
+# changing the color of the prompt
+zstyle :prompt:pure:path color cyan
+zstyle :prompt:pure:git:branch color green  
+zstyle :prompt:pure:prompt:success color magenta
+zstyle :prompt:pure:git:dirty color yellow
+
+# remove the new line on prompt
+print() {
+  [ 0 -eq $# -a "prompt_pure_precmd" = "${funcstack[-1]}" ] || builtin print "$@";
+}
+prompt pure
+PROMPT="${PROMPT%% } "
