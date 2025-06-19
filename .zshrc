@@ -38,12 +38,6 @@ load_custom_shell
 
 export GPG_TTY=$(tty)
 
-#prompt
-fpath+=("$(brew --prefix)/share/zsh/site-functions")
-autoload -U promptinit; 
-promptinit
-prompt pure
-
 # changing the color of the prompt
 zstyle :prompt:pure:path color cyan
 zstyle :prompt:pure:git:branch color green  
@@ -54,5 +48,18 @@ zstyle :prompt:pure:git:dirty color yellow
 print() {
   [ 0 -eq $# -a "prompt_pure_precmd" = "${funcstack[-1]}" ] || builtin print "$@";
 }
+#prompt
+fpath+=("$(brew --prefix)/share/zsh/site-functions")
+autoload -U promptinit; 
+promptinit
 prompt pure
 PROMPT="${PROMPT%% } "
+
+# fix on the vi mode eating a line above
+function zle-line-init zle-keymap-select {
+    RPS1="${${KEYMAP/vicmd/}/(main|viins)/}"
+    RPS2=$RPS1
+    zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
