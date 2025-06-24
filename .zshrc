@@ -13,6 +13,9 @@ PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 PATH="/Users/mateus.garcia/.asdf/shims:$PATH"
 PATH="/Users/mateus.garcia/.local/bin:$PATH"
 
+# this gives me some cool operations that i can do
+setopt EXTENDED_GLOB
+
 # Some auto complete configs
 zstyle ':completion:*' completer _complete _ignored
 zstyle :compinstall filename "$HOME/.zshrc"
