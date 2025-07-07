@@ -26,7 +26,6 @@ alias gst='git status'
 alias gsw='git switch'
 alias gwip='git add -A && git commit -m "WIP"'
 
-
 # alias gco='git checkout'
 function gco() {
 	echo
@@ -34,3 +33,6 @@ function gco() {
 	echo 'If you are trying to restore a file then gres or gress'
 	echo
 }
+
+# a complex enough git alias for git switch interactive
+alias gswi='git branch --sort=-committerdate --format="%(refname:short) | %(contents:subject)" | grep -v "^master" | column -t -s"|" | gum choose | awk "{print \$1}" | xargs git switch'
