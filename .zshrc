@@ -69,3 +69,8 @@ zle -N zle-keymap-select
 
 # fuzzy find
 source <(fzf --zsh)
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/mateus.garcia/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
