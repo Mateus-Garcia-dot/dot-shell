@@ -41,31 +41,12 @@ load_custom_shell
 
 export GPG_TTY=$(tty)
 
-# changing the color of the prompt
-zstyle :prompt:pure:path color cyan
-zstyle :prompt:pure:git:branch color green  
-zstyle :prompt:pure:prompt:success color magenta
-zstyle :prompt:pure:git:dirty color yellow
-
-# remove the new line on prompt
-print() {
-  [ 0 -eq $# -a "prompt_pure_precmd" = "${funcstack[-1]}" ] || builtin print "$@";
-}
-#prompt
-fpath+=("$(brew --prefix)/share/zsh/site-functions")
-autoload -U promptinit; 
-promptinit
-prompt pure
-PROMPT="${PROMPT%% } "
-
-# fix on the vi mode eating a line above
-function zle-line-init zle-keymap-select {
-    RPS1="${${KEYMAP/vicmd/}/(main|viins)/}"
-    RPS2=$RPS1
-    zle reset-prompt
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
+eval "$(starship init zsh)"
 
 # fuzzy find
 source <(fzf --zsh)
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/mateus.garcia/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
