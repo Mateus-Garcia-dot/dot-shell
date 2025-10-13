@@ -36,3 +36,4 @@ function gco() {
 
 # a complex enough git alias for git switch interactive
 alias gswi='git branch --sort=-committerdate --format="%(refname:short) | %(contents:subject)" | grep -v "^master" | column -t -s"|" | gum choose | awk "{print \$1}" | xargs git switch'
+

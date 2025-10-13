@@ -2,7 +2,7 @@
 
 autoload bashcompinit && bashcompinit
 
-alias dcr="docker-compose down;docker-compose up"
+alias dcr="docker-compose down && docker-compose up -d && docker-compose logs -f"
 
 alias dssh="_dssh"
 

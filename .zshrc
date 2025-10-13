@@ -6,6 +6,9 @@ HISTSIZE=1000000
 SAVEHIST=100000
 bindkey -e
 
+# vim thingy
+export ZVM_SYSTEM_CLIPBOARD_ENABLED=true
+
 #Some path things
 PATH=/opt/homebrew/bin:$PATH
 PATH=/usr/local/bin:$PATH
