@@ -29,7 +29,9 @@ zstyle ':completion:*' menu select
 
 # raw dogging the pugins just to get some more performance
 source $PLUGINS_DIR/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-source $PLUGINS_DIR/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+if [[ -z "$INSIDE_EMACS" ]]; then
+    source $PLUGINS_DIR/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+fi
 source $PLUGINS_DIR/zsh-manydots-magic/manydots-magic
 
 #Nvm Things
